@@ -9,3 +9,24 @@ while (i < N)
     i = i + 1;
 }
 Console.WriteLine(max);
+
+max = arr[0];
+for (int j = 0; j < N; j++) 
+{
+    if (arr[j] > max)
+    {
+        max = arr[j];
+    }
+
+}
+Console.WriteLine(max);
+
+max = arr[0];
+foreach(int e in arr)
+{
+     if (e > max)
+    {
+        max = e;
+    } 
+}
+Console.WriteLine(max);

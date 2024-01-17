@@ -1,53 +1,35 @@
-﻿using System;
-using System.Linq;
-
-
-class UserInputToCompileForTest
+﻿void Print(int[] arr)
 {
-    int CountItemsRange(int[] numbers, int minRange, int maxRange)
-
+    int size = arr.Length;
+    for (int i = 0; i < size; i++)
     {
-        int count = 0;
-        foreach (int i in numbers) ;
-        {
-            if (i >= minrange && i <= maxrange) ;
-            count++;
-
-        }
-        return count;
+        Console.WriteLine($"{arr[i]} ");
     }
-    public static void PrintResult(int[] array);
-
-    int Res = CountItemsRange(array, 10, 90);
-    Console.WriteLine(int Res );
-    
-
-
-
-
- static void Main(string[] args)
-    {
-        int[] array;
-
-
-        if (args.Length >= 1)
-        {
-            // Объединяем все аргументы командной строки в одну строку
-            string joinedArgs = string.Join(" ", args);
-
-            // Разделяем строку по запятой с пробелом и преобразуем в массив целых чисел
-            array = joinedArgs.Split(", ")
-                                  .Select(int.Parse)
-                                  .ToArray();
-
-            // Теперь arr содержит преобразованные в целые числа из командной строки
-
-        }
-        else
-        {
-            // Если аргументов на входе нет
-            array = new int[] { 1, 5, 10, 20, 30, 40, 99, 4, 90, 3 }; // Создание массива
-        }
-        UserInputToCompileForTest.PrintResult(array);
-    }
+    Console.WriteLine(); //разделение строкой
 }
+int[] MassNums(int size, int from, int to)
+{
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++)
+        arr[i] = new Random().Next(from, to + 1);
+    return arr;
+}
+
+int InRange(int[] arr)
+{
+    int n = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] >= 20 && arr[i] <= 90)
+            n += 1;
+    }
+    return n;
+}
+
+int num = int.Parse(Console.ReadLine()!);
+int start = int.Parse(Console.ReadLine()!);
+int stop = int.Parse(Console.ReadLine()!);
+
+int[] mass = MassNums(num , start, stop);
+Print(mass);
+Console.WriteLine(InRange(mass));

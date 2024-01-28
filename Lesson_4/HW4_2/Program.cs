@@ -54,3 +54,76 @@ class Program
     }
 }
 
+//// 1. Напишите программу, которая бесконечно
+//    запрашивает целые числа с консоли. Программа
+//    завершается при вводе символа ‘q’ или при вводе
+//    числа, сумма цифр которого четная.
+
+void InfEnter()
+{
+    string word;
+
+    while (true)
+    {
+        Console.Write("Output any number: ");
+        word = Console.ReadLine()!;
+
+        if (word != "q")
+        {
+            int count = 0;
+            int number = int.Parse(word);            
+            for (; number > 0; number /= 10)
+                count += number % 10;
+
+            if (count % 2 == 0)
+            {
+                Console.WriteLine("Game is over! Number is even");
+                return;
+            }
+        }
+        else
+            return;
+    }
+}
+/*//// 2. Задайте массив заполненный случайными
+//    трёхзначными числами. Напишите программу,
+//    которая покажет количество чётных чисел в
+//    массиве.
+
+void Print(int[] arr)
+{
+    int size = arr.Length;
+
+    for (int i = 0; i < size; i++)    
+        Console.Write($"{arr[i]} ");
+    
+    Console.WriteLine();
+}
+
+int[] MassNums(int size)
+{
+    int[] arr = new int[size];
+
+    for (int i = 0; i < size; i++)    
+        arr[i] = new Random().Next(100, 1000);
+    
+    return arr;
+}
+
+int EvenNum(int[] arr)
+{
+    int count = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] % 2 == 0)        
+            count += 1;                
+    }
+    return count;
+}
+
+int num = int.Parse(Console.ReadLine()!);
+
+int[] mass = MassNums(num, start, stop);
+Print(mass);
+Console.WriteLine(EvenNum(mass));

@@ -1,14 +1,16 @@
 ﻿
-int Fact (int n)
-{   
-    if (n==1 || n == 0)
-    {
-        Console.WriteLine($"Stop {n}");
-        return 1;
-    }
-    Console.WriteLine(n);
-    return n * Fact(n-1)!;
-   
+ int Fact(int n)
+{
+if (n == 0)
+{
+Console.WriteLine($"Stop requrson:n={n}");
+return 1;
+}
+Console.WriteLine(n);
+int fact = Fact(n - 1);
+Console.WriteLine($"Возврат:n={n-1}, fact={fact}");
+return n * fact;
+
 }
 
-Console.WriteLine(Fact(5));
+Console.Write(Fact(5));

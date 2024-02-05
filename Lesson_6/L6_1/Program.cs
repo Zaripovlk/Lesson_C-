@@ -1,4 +1,4 @@
-﻿Console.Clear();
+﻿
 int Fact (int n)
 {   
     if (n==1 || n == 0)

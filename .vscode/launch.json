@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "C#: L_6 Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder>.csproj"
+        },
+        {
+            "name": "C#: Task4",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Lesson1\\Task4\\Task4.csproj",
+            "launchConfigurationId": "TargetFramework=;Task4"
+        }
+    ]
+}

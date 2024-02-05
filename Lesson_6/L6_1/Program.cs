@@ -12,5 +12,3 @@ int Fact (int n)
 }
 
 Console.WriteLine(Fact(5));
-
-
